@@ -44,3 +44,9 @@
 
 # config von tjade (Ole Willers)
 theme=GruvboxDarkHard
+
+# font configuration:
+font-family = "JetBrainsMono Nerd Font"
+
+# opacity
+background-opacity=0.95
