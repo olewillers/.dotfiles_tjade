@@ -46,12 +46,18 @@ alias gp='git push'
 alias gl='git pull'
 alias gal='git add .'
 gca() {
-  if [ -z "$1"]; then 
+  if [[ -z "$1" ]]; then 
     echo "Du hast die Commit-Message vergessen du dully :)"
-  else
-    git commit -a -m "$*"
+    return 1
+  elif [[ "$1" != \"*\" || != *\" ]]; then 
+    echo "failure"
   fi
+
+  echo "success"
+  
+#  git commit -a -m "$1"
 }
+
 # neovim aliases
 alias lazyvim='NVIM_APPNAME=lazyvim nvim'
 
