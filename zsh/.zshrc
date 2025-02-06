@@ -13,16 +13,29 @@ source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # define aliases
 
-# Ubuntu-aliases:
+#####################
+## Ubuntu-aliases: ##
+#####################
+
+# apt-aliases
+alias aud='sudo apt update'
+alias aug='sudo apt upgrade'
+ai() {
+  sudo apt install "$@"
+}
+
+# ll-aliases
 alias ls='ls --color=auto'
 alias ll='ls -lF'
 alias lla='ls -lFA'
 alias la='ls -A'
 alias l='ls -F'
 
+# dir-aliases
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 
+# grep-aliases
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -32,7 +45,15 @@ alias gst='git status'
 alias gp='git push'
 alias gl='git pull'
 alias gal='git add .'
-# alias gca= 'git commit -a'
+gca() {
+  if [ -z "$1"]; then 
+    echo "Du hast die Commit-Message vergessen du dully :)"
+  else
+    git commit -a -m "$*"
+  fi
+}
+# neovim aliases
+alias lazyvim='NVIM_APPNAME=lazyvim nvim'
 
 # laravel aliases:
 alias pas='php artisan serve'
