@@ -49,13 +49,9 @@ gca() {
   if [[ -z "$1" ]]; then 
     echo "Du hast die Commit-Message vergessen du dully :)"
     return 1
-  elif [[ "$1" != \"*\" || != *\" ]]; then 
-    echo "failure"
+  else
+    git commit -a -m "$1"
   fi
-
-  echo "success"
-  
-#  git commit -a -m "$1"
 }
 
 # neovim aliases
