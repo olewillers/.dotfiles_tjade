@@ -11,6 +11,7 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # activate autosuggestions
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+
 # define aliases
 
 #####################
@@ -44,6 +45,7 @@ alias egrep='egrep --color=auto'
 alias gst='git status'
 alias gp='git push'
 alias gl='git pull'
+alias gf='git fetch'
 alias gal='git add .'
 gca() {
   if [[ -z "$1" ]]; then 
@@ -59,3 +61,10 @@ alias lazyvim='NVIM_APPNAME=lazyvim nvim'
 
 # laravel aliases:
 alias pas='php artisan serve'
+
+# Siteground-Server Alias
+alias rcaServer='ssh u2266-nxgmmqlvonaf@ssh.rugby-club-aachen.com -p 18765'
+
+# Java Path:
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
