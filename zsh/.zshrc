@@ -70,6 +70,9 @@ alias pas='php artisan serve'
 # Siteground-Server Alias
 alias rcaServer='ssh u2266-nxgmmqlvonaf@ssh.rugby-club-aachen.com -p 18765'
 
+# aliase für custom bash-skripte
+alias sgt='switchGhosttyTheme.sh'
+
 # Java Path:
 export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 export PATH=$JAVA_HOME/bin:$PATH

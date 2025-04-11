@@ -43,7 +43,7 @@
 # resize-overlay-duration = 4s 200ms
 
 # config von tjade (Ole Willers)
-theme="GruvBoxDarkHard"
+theme="GruvboxDarkHard"
 
 # font configuration:
 # font-family = "JetBrainsMono Nerd Font"
