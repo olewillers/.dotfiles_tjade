@@ -1,6 +1,8 @@
 # individual cowsay command on startup
 # Fancy pants one-liner
-fortune | cowsay -f $(cowsay -l | tail -n +2 | tr ' ' '\n' | shuf -n 1) | lolcat --seed 0 --spread 1.0
+
+fortune | cowsay -f $(cowsay -l | tail -n +2 | tr ' ' '\n' | shuf -n 1) | lolcat --seed 0
+# fortune | cowsay -f $(cowsay -l | tail -n +2 | tr ' ' '\n' | shuf -n 1) | lolcat --seed 0 --spread 1.0
 
 # start starship
 eval "$(starship init zsh)"
@@ -58,6 +60,9 @@ gca() {
 
 # neovim aliases
 alias lazyvim='NVIM_APPNAME=lazyvim nvim'
+
+# emacs aliases
+alias emacs='emacs -nw'
 
 # laravel aliases:
 alias pas='php artisan serve'
