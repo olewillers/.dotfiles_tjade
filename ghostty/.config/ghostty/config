@@ -43,13 +43,13 @@
 # resize-overlay-duration = 4s 200ms
 
 # config von tjade (Ole Willers)
-theme="Alabaster"
+theme="catppuccin-latte"
 
 # font configuration:
 # font-family = "JetBrainsMono Nerd Font"
 
 # opacity
-background-opacity=0.95
+background-opacity=0.9
 
 # reload config shortcut
 keybind = ctrl+alt+r=reload_config

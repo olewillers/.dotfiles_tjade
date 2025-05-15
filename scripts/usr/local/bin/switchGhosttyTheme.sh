@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# This script toggles the ghostty theme between 'catppuccin-latte' and 'catppuccin-macchiato'
+# This script toggles the ghostty theme and the starship color-palette 
+# between 'catppuccin-latte' and 'catppuccin-macchiato'
 # You have the option to pass multiple arguments to the script which will be formatted
 # to a concatenated string and written into the ghostty config file
 # the default Theme if no arguments are given is 'catppuccin-macchiato'
@@ -20,31 +21,38 @@ Examples:
   $(basename "$0") Tokyo Night    # Set theme to "Tokyo Night"
   $(basename "$0") -h             # Show this help message
 
-Config path: $path
+Config path: ~/.dotfiles_tjade/scripts/usr/local/bin/switchGhosttyTheme.sh
 EOF
     exit 0
 fi
 
-path="$HOME/.dotfiles_tjade/ghostty/.config/ghostty/config"
-theme=$(sed -n 's/^theme="\([^"]*\)"/\1/p' "$path")
-updateTheme=""
+ghosttyConfigPath="$HOME/.dotfiles_tjade/ghostty/.config/ghostty/config"
+starshipConfigPath="$HOME/.dotfiles_tjade/starship/.config/starship.toml"
+theme=$(sed -n 's/^theme="\([^"]*\)"/\1/p' "$ghosttyConfigPath")
+updateGhosttyTheme=""
+updateStarshipTheme=""
 
 if [[ $# -eq 0 ]]; then
     case "$theme" in
 	"catppuccin-latte")
-	    updateTheme="catppuccin-macchiato"
+	    updateGhosttyTheme="catppuccin-macchiato"
+      updateStarshipTheme="catppuccin_macchiato"
 	    ;;
 	"catppuccin-macchiato")
-	    updateTheme="catppuccin-latte"
+	    updateGhosttyTheme="catppuccin-latte"
+      updateStarshipTheme="catppuccin_latte"
 	    ;;
 	*)
-	    updateTheme="catppuccin-macchiato"
+	    updateGhosttyTheme="catppuccin-macchiato"
+      updateStarshipTheme="catppuccin_latte"
 	    ;;
     esac
 else
-    updateTheme="$*"
+    updateGhosttyTheme="$*"
 fi
 
-sed -i "s/^theme=\"${theme}\"/theme=\"${updateTheme}\"/" "$path"
+sed -i "s/^theme=\"${theme}\"/theme=\"${updateGhosttyTheme}\"/" "$ghosttyConfigPath"
+sed -i "s/palette = \"catppuccin_.*/palette = \"${updateStarshipTheme}\"/" "$starshipConfigPath"
 
-echo "Updated Theme: ${theme} → ${updateTheme}"
+echo "Updated Ghostty Theme: ${theme} → ${updateGhosttyTheme}"
+echo "Updated starship color-palette: ${theme} → ${updateGhosttyTheme}"

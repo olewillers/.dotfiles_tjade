@@ -5,5 +5,8 @@ Das ist möglich dank GNU stow https://www.gnu.org/software/stow/
 
 ### enthaltene dotfiles:
 - ghostty
-- zsh (mit oh-my-zsh: https://github.com/ohmyzsh/ohmyzsh erweitert und spaceship-prompt: https://github.com/spaceship-prompt/spaceship-prompt)
-- bald: nvim :)
+- zshell
+- starship (hoffentlich bald nicht mehr in Verwendung)
+- nvim
+- git
+- scripts (enthält meine custom shell scripts)
