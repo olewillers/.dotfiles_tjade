@@ -13,19 +13,42 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # activate autosuggestions
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# set keybindings because of zsh not recognizing for example: 'Ctrl + <-', 'Ctrl + ->', 'Entf'
+# not working by default in: ghostty, alacritty, kitty, fedora standard terminal)
 
-# define aliases
+# keybind for Ctrl + ->
+bindkey '^[[1;5C' forward-word
 
-#####################
-## Ubuntu-aliases: ##
-#####################
+# keybind for Ctrl + <-
+bindkey '^[[1;5D' backward-word
+
+# keybind for Ctrl + Entf
+bindkey '^[[3~' delete-char
+
+# keybind for Ctrl + delete
+bindkey '^[[3;5~' kill-word
+
+# keybind for Ctrl + delete
+bindkey '^H' backward-kill-word
+
+#############
+## ALIASES ##
+#############
 
 # apt-aliases
-alias aud='sudo apt update'
-alias aug='sudo apt upgrade'
-ai() {
-  sudo apt install "$@"
-}
+# alias ai='sudo apt install'
+# alias aud='sudo apt update'
+# alias aug='sudo apt upgrade'
+
+# dnf-aliases
+alias di='sudo dnf install'
+alias dr='sudo dnf remove'
+alias du='sudo dnf upgrade'
+alias dur='sudo dnf upgrade --refresh'
+alias ds='dnf search'
+alias dl='dnf list'
+alias dca='dnf clean all'
+alias dhl='dnf history list'
 
 # ll-aliases
 alias ls='ls --color=auto'
@@ -58,9 +81,6 @@ gca() {
   fi
 }
 
-# neovim aliases
-alias lazyvim='NVIM_APPNAME=lazyvim nvim'
-
 # emacs aliases
 alias emacs='emacs -nw'
 
@@ -72,6 +92,11 @@ alias rcaServer='ssh u2266-nxgmmqlvonaf@ssh.rugby-club-aachen.com -p 18765'
 
 # aliase für custom bash-skripte
 alias sgt='switchGhosttyTheme.sh'
+
+# Set environment Variables
+export EDITOR='/usr/sbin/nvim'
+export VISUAL='/usr/sbin/nvim'
+
 
 # Java Path:
 export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
