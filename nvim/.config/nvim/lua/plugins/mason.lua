@@ -16,7 +16,7 @@ return {
 		dependencies = { "williamboman/mason.nvim" },
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "pyright", "lua_ls", "clangd" },
+				ensure_installed = { "pyright", "lua_ls", "clangd", "intelephense" },
 				automatic_installation = true,
 			})
 		end,

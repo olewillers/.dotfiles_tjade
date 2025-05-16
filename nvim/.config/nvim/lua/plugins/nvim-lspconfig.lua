@@ -59,6 +59,12 @@ return {
 				capabilities = capabilities,
 				filetypes = { "py" },
 			})
+
+			lspconfig.intelephense.setup({
+				cmd = { "intelephense", "--stdio" },
+				capabilities = capabilities,
+				filetypes = { "php" },
+			})
 		end,
 	},
 }
