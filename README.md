@@ -5,8 +5,9 @@ Das ist möglich dank GNU stow https://www.gnu.org/software/stow/
 
 ### enthaltene dotfiles:
 - ghostty
-- zshell
+- zsh
 - starship (hoffentlich bald nicht mehr in Verwendung)
+- tmux
 - nvim
 - git
 - scripts (enthält meine custom shell scripts)
