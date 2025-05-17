@@ -1,20 +1,38 @@
 # individual cowsay command on startup
-# Fancy pants one-liner
+# fortune | cowsay -f $(cowsay -l | tail -n +2 | tr ' ' '\n' | shuf -n 1) | lolcat --seed 0
 
-fortune | cowsay -f $(cowsay -l | tail -n +2 | tr ' ' '\n' | shuf -n 1) | lolcat --seed 0
-# fortune | cowsay -f $(cowsay -l | tail -n +2 | tr ' ' '\n' | shuf -n 1) | lolcat --seed 0 --spread 1.0
+# -----------------------------------------------------
+# Fastfetch on startup
+# -----------------------------------------------------
+if [[ $(tty) == *"pts"* ]]; then
+    fastfetch --config examples/13
+else
+    echo
+    if [ -f /bin/hyprctl ]; then
+        echo "Start Hyprland with command Hyprland"
+    fi
+fi
 
+
+# ----------------------------------------------------
 # start starship
+# ----------------------------------------------------
 eval "$(starship init zsh)"
 
+# ----------------------------------------------------
 # activate syntax highlighting
+# ----------------------------------------------------
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# ----------------------------------------------------
 # activate autosuggestions
+# ----------------------------------------------------
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# ----------------------------------------------------
 # set keybindings because of zsh not recognizing for example: 'Ctrl + <-', 'Ctrl + ->', 'Entf'
 # not working by default in: ghostty, alacritty, kitty, fedora standard terminal)
+# ----------------------------------------------------
 
 # keybind for Ctrl + ->
 bindkey '^[[1;5C' forward-word
@@ -92,6 +110,7 @@ alias rcaServer='ssh u2266-nxgmmqlvonaf@ssh.rugby-club-aachen.com -p 18765'
 
 # aliase für custom bash-skripte
 alias sgt='switchGhosttyTheme.sh'
+alias gebm='gnomeExtensionBackupManager.sh'
 
 # Set environment Variables
 export EDITOR='/usr/sbin/nvim'

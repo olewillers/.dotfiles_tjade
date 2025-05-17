@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# File: /usr/local/bin/switchGhosttyTheme.sh
+# Author: Ole Willers
+#
 # This script toggles the ghostty theme and the starship color-palette 
 # between 'catppuccin-latte' and 'catppuccin-macchiato'
 # You have the option to pass multiple arguments to the script which will be formatted
@@ -12,6 +15,7 @@ if [[ "$1" == "--help" || "$1" == "-h" ]]; then
 Usage: $(basename "$0") [THEME_NAME]
 
 This script toggles the Ghostty theme between 'catppuccin-latte' and 'catppuccin-macchiato'.
+It also updates the flavour of the catppuccin starship prompt in analogy to the ghostty theme.
 
 If no arguments are passed, the current theme will be toggled.
 If one or more arguments are passed, they will be joined as a single theme name.

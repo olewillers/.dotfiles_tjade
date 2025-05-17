@@ -16,4 +16,5 @@ require("lazy").setup({
 	{ import = "plugins.blink-cmp" },
 	{ import = "plugins.formatter" },
 	{ import = "plugins.whichkey" },
+	{ import = "plugins.vim-tmux-navigator" },
 })
