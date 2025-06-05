@@ -5,6 +5,7 @@
 require("lazy").setup({
 	{ import = "plugins.catpuccin" },
 	{ import = "plugins.tiny-inline-diagnostics" },
+	{ import = "plugins.snacks" },
 	{ import = "plugins.mason" },
 	{ import = "plugins.lualine" },
 	{ import = "plugins.telescope" },

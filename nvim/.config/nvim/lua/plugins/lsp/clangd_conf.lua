@@ -21,4 +21,13 @@ return {
 			semanticHighlighting = true,
 		},
 	}),
+
+	vim.api.nvim_create_autocmd("FileType", {
+		pattern = { "cpp", "hpp", "c", "h" },
+		callback = function()
+			vim.bo.tabstop = 4 -- Anzahl der Leerzeichen pro Tab
+			vim.bo.shiftwidth = 4 -- Anzahl der Leerzeichen fürs Einrücken
+			vim.bo.expandtab = true -- Tabs in Leerzeichen umwandeln
+		end,
+	}),
 }

@@ -17,3 +17,4 @@ keymap("n", "<leader>yy", '"+yy', opts) -- yank line to system clipboard
 
 -- keymaps for nvim-tree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action anzeigen" })

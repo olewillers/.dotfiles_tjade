@@ -4,6 +4,8 @@
 
 return {
 	vim.lsp.config("pyright", {
-		filetypes = { "py" },
+		cmd = { "pyright-langserver", "--stdio" },
+		root_markers = { ".venv", "__pycache__" },
+		filetypes = { "python" },
 	}),
 }

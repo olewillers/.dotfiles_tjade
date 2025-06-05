@@ -70,10 +70,14 @@ alias dhl='dnf history list'
 
 # ll-aliases
 alias ls='ls --color=auto'
-alias ll='ls -lF'
-alias lla='ls -lFA'
-alias la='ls -A'
-alias l='ls -F'
+alias l='eza --icons=always'
+alias ll='eza -lF --icons=always'
+alias lla='eza -la --icons=always'
+alias la='eza -A --icons=always'
+alias lt='eza -T --icons=always'
+alias lta='eza -Ta --icons=always'
+alias lr='eza -R --icons=always'
+alias lra='eza -Ra --icons=always'
 
 # dir-aliases
 alias dir='dir --color=auto'
@@ -111,11 +115,16 @@ alias rcaServer='ssh u2266-nxgmmqlvonaf@ssh.rugby-club-aachen.com -p 18765'
 # aliase für custom bash-skripte
 alias sgt='switchGhosttyTheme.sh'
 alias gebm='gnomeExtensionBackupManager.sh'
+alias tmux-session='tmux-session' # für tab-completion
+
+# set environment Variables for aocc (AMD compiler)
+aocc() {
+  source /opt/AMD/aocc-compiler-5.0.0/setenv_AOCC.sh
+}
 
 # Set environment Variables
 export EDITOR='/usr/sbin/nvim'
 export VISUAL='/usr/sbin/nvim'
-
 
 # Java Path:
 export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64

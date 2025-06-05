@@ -21,5 +21,12 @@ return {
 			timeout_ms = 500,
 			lsp_fallback = false,
 		},
+		formatters = {
+			clang_format = {
+				prepend_args = {
+					"--style={BasedOnStyle: LLVM, IndentWidth: 4, TabWidth: 4, UseTab: Never}",
+				},
+			},
+		},
 	},
 }
