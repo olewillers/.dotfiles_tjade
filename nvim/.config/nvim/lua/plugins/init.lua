@@ -18,4 +18,5 @@ require("lazy").setup({
 	{ import = "plugins.formatter" },
 	{ import = "plugins.whichkey" },
 	{ import = "plugins.vim-tmux-navigator" },
+	{ import = "plugins.vim-kitty" },
 })

@@ -27,7 +27,17 @@ config.window_padding = {
 	bottom = 5,
 }
 config.window_background_opacity = 0.8
-config.enable_wayland = false
+-- config.enable_wayland = false
 config.enable_tab_bar = false
+config.initial_rows = 40
+config.initial_cols = 153
+
+-- wezterm.on("gui-startup", function(cmd)
+-- 	local mux = wezterm.mux
+-- 	local _, _, window = mux.spawn_window(cmd or {})
+-- 	local gui = window:gui_window()
+-- 	gui:set_inner_size(2000, 1200) -- falls nötig
+-- 	gui:set_position(1000, 100) -- X/Y Pixelposition
+-- end)
 
 return config
