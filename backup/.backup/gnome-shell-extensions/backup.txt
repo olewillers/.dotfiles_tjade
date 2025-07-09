@@ -54,6 +54,12 @@ window-size=(640, 460)
 support-notifier-showed-version=34
 support-notifier-type=0
 
+[rounded-window-corners-reborn]
+enable-preferences-entry=true
+global-rounded-corner-settings={'padding': <{'left': uint32 1, 'right': 1, 'top': 1, 'bottom': 1}>, 'keepRoundedCorners': <{'maximized': false, 'fullscreen': false}>, 'borderRadius': <uint32 12>, 'smoothing': <0.5>, 'borderColor': <(0.5, 0.5, 0.5, 1.0)>, 'enabled': <true>}
+settings-version=uint32 7
+tweak-kitty-terminal=true
+
 [runcat]
 idle-threshold=10
 
